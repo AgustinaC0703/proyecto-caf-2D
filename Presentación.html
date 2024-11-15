@@ -1,0 +1,947 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device=width, initial scale=1.0" />
+    <title> Cafe 2D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Questrial&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .presentacion {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .diapositiva {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out;
+            opacity: 0;
+            z-index: 0;
+        }
+
+        .activa {
+            opacity: 1;
+            z-index: 1;
+        }
+
+
+        .cafe2d-background {
+            background-image: url("imagenes/Principal.jpg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 0%;
+            font-size: 24px;
+            color: #C7C7C7;
+            background-color: #575757;
+            padding: 15px 20px;
+            font-family: 'Cardo', serif;
+            width: 100%;
+            text-align: center;
+        }
+
+        .logo-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-background {
+            background-color: rgba(128, 128, 128, 0.7);
+            border-radius: 30%;
+            padding: 30px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            width: 300px;
+            height: 200px;
+        }
+
+        .cafe2d-background-2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cafe2d-background-2 {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+
+        .section {
+            width: 70%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .section-1 {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("imagenes/fondo2-diapo2.jpg");
+        }
+
+        .section-2 {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url("imagenes/fondo1-diapo2.jpg");
+        }
+
+        .text-box1 {
+            background-color: rgba(87, 87, 87, 0.9);
+            color: #C7C7C7;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Cardo', serif;
+            width: 110%;
+            max-width: 1800px;
+            margin-top: -290px;
+        }
+
+        .text-box2 {
+            background-color: rgba(87, 87, 87, 0.9);
+            color: #C7C7C7;
+            padding: 20px;
+            text-align: center;
+            font-family: 'Cardo', serif;
+            width: 103%;
+            max-width: 1900px;
+            margin-bottom: -250px;
+        }
+
+        .text-box1 h2,
+        .text-box2 h2 {
+            font-size: 30px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .text-box1 p,
+        .text-box2 p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+
+        .cafe2d-background-3 {
+            background-color: #b0b0b0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .slide-title {
+            font-family: 'Cardo', serif;
+            color: #ffffff;
+            font-size: 24px;
+            margin-bottom: 40px;
+            margin-left: -30px;
+            margin-top: -5px
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 120px;
+            margin-bottom: 50px
+        }
+
+        .image-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            border-radius: 15px;
+            padding: 15px;
+            width: 200px;
+            text-align: center;
+        }
+
+        .rounded-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+
+        .image-box p {
+            font-family: 'Cardo', serif;
+            color: #333333;
+            font-size: 14px;
+            margin: 0;
+        }
+
+
+        .cafe2d-background-4 {
+            background-color: #e0e0e0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+        }
+
+        .slide-title2 {
+            font-family: 'Cardo', serif;
+            color: #000000;
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            margin-left: 40px
+        }
+
+        .content-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            display: grid;
+            grid-template-areas:
+                "logo2 sketch icons"
+                "featured-products sketch fonts-info";
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 20px;
+        }
+
+        .image {
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .logo2 {
+            grid-area: logo2;
+            width: 200px;
+            height: 100px;
+            margin-left: -50px;
+            margin-right: 100px;
+            position: relative;
+            left: 44px
+        }
+
+        .sketch {
+            grid-area: sketch;
+            width: 250px;
+            height: 400px;
+            margin-left: -100px;
+
+        }
+
+        .icons {
+            grid-area: icons;
+            width: 300px;
+            height: 100px;
+            margin-top: 100px;
+            margin-right: -30px;
+            margin-left: 40px
+        }
+
+        .featured-products {
+            grid-area: featured-products;
+            width: 400px;
+            height: 200px;
+            margin-left: -200px;
+            margin-right: 150px;
+            margin-top: 30px
+        }
+
+        .fonts-info {
+            grid-area: fonts-info;
+            font-family: 'Cardo', serif;
+            color: #000000;
+            font-size: 18px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-top: 20px;
+            position: relative;
+            top: -30px;
+            left: -6px;
+        }
+
+        .fonts-info p {
+            margin: 5px 0;
+        }
+
+        
+        .arrow {
+            font-size: 60px;
+            color: #000000;
+            position: relative;
+        }
+
+        .arrow-left-top {
+            top: 15%;
+            left: 32px;
+        }
+
+        .arrow-right-top {
+            top: 58%;
+            right: 14%;
+        }
+
+        .arrow-left-bottom {
+            bottom: -24%;
+            left: -16%;
+        }
+
+        .arrow-right-bottom {
+            top: -4%;
+            right: 8%;
+        }
+
+        .arrow-connect-element {
+            display: flex;
+            z-index: 999;
+            position: relative;
+            /* left: -9%; */
+        }
+
+        .cafe2d-background-6 {
+            position: relative;
+            background-image: url("imagenes/del boceto al sitio.jpg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+        }
+
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+            z-index: 1;
+        }
+
+        .slide-title {
+            font-family: 'Cardo', serif;
+            color: #000;
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .box-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+
+        .text-box {
+            background-color: rgba(87, 87, 87, 0.8);
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            width: 250px;
+            height: 150px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+
+        }
+
+        .text-box h3 {
+            font-family: 'Cardo', serif;
+            font-size: 20px;
+            margin-bottom: 5px;
+            margin-top: -15px
+        }
+
+        .text-box ul {
+            list-style-type: disc;
+            padding-left: 5px;
+        }
+
+        .text-box li {
+            font-size: 17px;
+            margin-bottom: 0;
+        }
+
+        .cafe2d-background-link {
+            background-image: url("imagenes/ver página.jpg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+
+        .link-button {
+            background-color: rgba(169, 169, 169, 0.7);
+           
+            color: #000;
+            font-family: 'Cardo', serif;
+            font-size: 24px;
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .link-button:hover {
+            background-color: rgba(169, 169, 169, 0.9);
+        }
+
+        .cafe2d-background-thanks {
+            background-image: url("imagenes/Principal.jpg");
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+
+        .thank-you-message {
+            font-family: 'Cardo', serif;
+            font-size: 36px;
+            color: #ffffff;
+            background-color: rgba(87, 87, 87, 0.7);
+            padding: 20px 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: #C7C7C7;
+            background: rgba(0, 0, 0, 0.5);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .nav-btn:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        #anterior {
+            left: 20px;
+        }
+
+        #siguiente {
+            right: 20px;
+        }
+
+        #anterior {
+            left: 20px;
+        }
+
+        #siguiente {
+            right: 20px;
+        }
+
+        @media(max-width:1400px) {
+
+            .text-box {
+                flex-direction: column;
+                width: 168px;
+                height: 218px;
+            }
+
+            .text-box:last-child {
+                height: 110px;
+                margin-bottom: 70px;
+            }
+
+            .text-box:first-child {
+                height: 149px;
+               
+            }
+        }
+
+        @media(max-width: 968px) {
+            .logo-background {
+                padding: 10px 30px;
+            }
+
+            .logo {
+                width: 200px;
+                height: 150px;
+            }
+
+            .thank-you-message,
+            .link-button {
+                padding: 20px 21px;
+                font-size: 26px;
+            }
+
+            .image-container {
+                gap: 98px !important;
+                position: relative;
+                left: -24px;
+            }
+
+
+            .text-box {
+                flex-direction: column;
+                width: 128px;
+            }
+
+            .icons {
+                grid-area: icons;
+                width: 136px;
+                height: 29px;
+                margin-top: 100px;
+                margin-right: -30px;
+                margin-left: 40px;
+                position: relative;
+                top: -28px;
+                left: -22px;
+            }
+
+            .logo2 {
+                width: 155px;
+                height: 52px;
+                position: relative;
+                left: 176px;
+            }
+
+
+            .logo2 img {
+                position: relative;
+                top: -31px;
+            }
+
+            .featured-products {
+                grid-area: featured-products;
+                width: 344px;
+                height: 117px;
+                margin-left: -200px;
+                margin-right: 150px;
+                margin-top: 30px;
+                position: relative;
+                top: -42px;
+                left: 141px;
+            }
+
+            .fonts-info {
+                grid-area: fonts-info;
+                font-family: 'Cardo', serif;
+                color: #000000;
+                font-size: 12px;
+                margin-left: 50px;
+                margin-right: 50px;
+                margin-top: 20px;
+                position: relative;
+                top: -30px;
+                left: -35px;
+            }
+
+            .arrow-connect-element:last-child {
+                top: -27px;
+                left: 40px;
+            }
+
+            /* Flechas */
+            .arrow {
+                font-size: 28px;
+                color: #000000;
+                position: relative;
+            }
+
+            .arrow-left-top {
+                top: 94px;
+                right: -27px;
+            }
+
+            .arrow-right-top {
+                top: 94px;
+                right: -12px;
+            }
+
+            .arrow-left-bottom {
+                bottom: -31px;
+                left: -7px;
+            }
+
+            .arrow-right-bottom {
+                top: -4%;
+                right: -5px;
+            }
+
+            .arrow-connect-element {
+                display: flex;
+                z-index: 999;
+                position: relative;
+              
+            }
+
+            .sketch {
+                grid-area: sketch;
+                width: 158px;
+                height: 264px;
+                margin-left: -100px;
+                position: relative;
+                left: 72px;
+            }
+
+            .cafe2d-background-4{
+                overflow: scroll;
+            }
+        }
+
+        @media(max-width: 768px) {
+            .image-container {
+                gap: 58px !important;
+            }
+        }
+
+        @media(max-width: 668px) {
+            .cafe2d-background-3 {
+                overflow: scroll;
+            }
+
+            .image-container {
+                gap: 30px !important;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .slide-title {
+                margin-bottom: 50px !important;
+                margin-top: 348px !important;
+            }
+
+            .cafe2d-background-6 .slide-title {
+                margin-bottom: 50px !important;
+                margin-top: 28px !important;
+            }
+
+            .cafe2d-background-6 {
+               
+                padding: 40px 0px !important;
+                overflow: scroll;
+            }
+
+            .text-box {
+                width: 168px;
+            }
+        }
+
+        @media(max-width: 468px) {
+            .logo-background {
+                padding: 8px 25px;
+            }
+
+            .logo {
+                width: 150px;
+                height: 120px;
+            }
+
+            .thank-you-message,
+            .link-button {
+                padding: 20px 21px;
+                font-size: 20px;
+            }
+
+            .cafe2d-background-3 {
+                overflow: scroll;
+            }
+
+            .image-container {
+                gap: 28px !important;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .slide-title {
+                margin-bottom: 0px !important;
+                margin-top: 348px !important;
+            }
+
+            .text-box {
+                width: 168px;
+            }
+        }
+
+        @media(max-width: 368px) {
+            .logo-background {
+                padding: 5px 10px;
+            }
+
+            .logo {
+                width: 135px;
+                height: 95px;
+            }
+
+            .thank-you-message,
+            .link-button {
+                padding: 20px 21px;
+                font-size: 15px;
+            }
+
+            .image-container {
+                gap: 15px !important;
+            }
+        }
+
+        @media(max-width: 308px) {
+            .logo-background {
+                padding: 2px 10px;
+            }
+
+            .logo {
+                width: 105px;
+                height: 75px;
+            }
+
+            .thank-you-message,
+            .link-button {
+                padding: 10px 21px;
+                font-size: 12px;
+            }
+
+            .image-container {
+                gap: 5px !important;
+            }
+
+            .cafe2d-background-6 {
+               
+                padding: 40px 0px !important;
+            }
+
+        }
+    </style>
+
+    <div class="presentacion">
+        <button id="anterior" class="nav-btn" onclick="cambiarDiapositiva(-1)">&#10094;</button>
+
+        <div class="diapositiva activa">
+            <div class="cafe2d-background">
+                <div class="overlay-text">¡Donde lo cotidiano se vuelve extraordinario!</div>
+                <div class="logo-container">
+                    <div class="logo-background">
+                        <img src="imagenes/logo.png" alt="Café 2D Logo" class="logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="diapositiva">
+            <div class="cafe2d-background-2">
+                <div class="section section-1">
+                    <div class="text-box1">
+                        <h2>Sitio Web sobre Café 2D</h2>
+                        <p>- Cafetería del Barrio Chino</p>
+                        <p>- Estilo basado en un cómic y dibujo 2D</p>
+                        <p>- Menú amplio y accesible</p>
+                        <p>- Experiencia única e inolvidable</p>
+                    </div>
+                </div>
+                <div class="section section-2">
+                    <div class="text-box2">
+                        <h2>Diseño del Sitio</h2>
+                        <p>- Minimalista y sencillo</p>
+                        <p>- Cromático con combinación de pasteles</p>
+                        <p>- Secciones informativas y llamativas</p>
+                        <p>- Fotografías detalladas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="diapositiva">
+            <div class="cafe2d-background-4">
+                <h2 class="slide-title2">Boceto del Sitio</h2>
+
+                <div class="content-container">
+                    <div class="arrow-connect-element">
+                        <div class="image logo2">
+                            <img src="imagenes/logo2.png" alt="Logo Café 2D">
+                        </div>
+                        <div class="arrow arrow-left-top">&#8592;</div>
+                    </div>
+
+                    <div class="arrow-connect-element">
+                        <div class="arrow arrow-right-top">&#8594;</div>
+                        <div class="image icons">
+                            <img src="imagenes/iconos.jpg" alt="Iconos del Sitio">
+                        </div>
+                    </div>
+
+                    <div class="image sketch">
+                        <img src="imagenes/boceto.jpg" alt="Boceto del Sitio">
+                    </div>
+
+                    <div class="arrow-connect-element">
+                        <div class="image featured-products">
+                            <img src="imagenes/slider.jpg" alt="Productos Destacados">
+                        </div>
+                        <div class="arrow arrow-left-bottom">&#8592;</div>
+                    </div>
+
+                    <div class="arrow-connect-element">
+                        <div class="arrow arrow-right-bottom">&#8594;</div>
+                        <div class="fonts-info">
+                            <p>Cardo, Serif</p>
+                            <p>Questrial, Serif</p>
+                            <p>DM Sans, Serif</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="diapositiva">
+            <div class="cafe2d-background-6">
+                <h2 class="slide-title">Del Boceto al Diseño</h2>
+
+                <div class="box-container">
+                    <div class="text-box">
+                        <h3>Estructura</h3>
+                        <ul>
+                            <li>Desglose en secciones principales</li>
+                            <li>Etiquetas estructurales (&lt;header&gt;, &lt;div&gt;, &lt;footer&gt;, etc.)</li>
+                            <li>Claridad y coherencia en cada sección</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-box">
+                        <h3>Css y JavaScript</h3>
+                        <ul>
+                            <li>Estilos base (paleta de colores, tipografía)</li>
+                            <li>Diseño con flexbox y grid</li>
+                            <li>Efectos visuales (box-shadow, border-radius, etc.)</li>
+                            <li>Funcionalidades interactivas (slider, lightbox, etc.)</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-box">
+                        <h3>Adaptabilidad</h3>
+                        <ul>
+                            <li>Uso de Media Queries</li>
+                            <li>Flexbox y Grid responsive</li>
+                            <li>Ajustes de imágenes y tipografías</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="diapositiva">
+            <div class="cafe2d-background-3">
+                <h2 class="slide-title">PROGRESO EN EL DISEÑO</h2>
+                <div class="image-container">
+                    <div class="image-box">
+                        <img src="imagenes/antes.jpg" alt="antes" class="rounded-image">
+                        <p>ANTES</p>
+                    </div>
+                    <div class="image-box">
+                        <img src="imagenes/después.jpg" alt="después" class="rounded-image">
+                        <p>DÉSPUES</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="diapositiva">
+            <div class="cafe2d-background-link">
+                <a href="index.html" target="_blank" class="link-button">visitar página</a>
+            </div>
+        </div>
+        <div class="diapositiva">
+            <div class="cafe2d-background-thanks">
+                <h2 class="thank-you-message">Muchas gracias!</h2>
+            </div>
+        </div>
+
+
+        <button id="siguiente" class="nav-btn" onclick="cambiarDiapositiva(1)">&#10095;</button>
+    </div>
+
+
+    <script type="text/javascript">
+        const diapositivas = document.querySelectorAll('.diapositiva');
+        let diapositivaActual = 0;
+
+        function cambiarDiapositiva(n) {
+            diapositivas[diapositivaActual].classList.remove('activa');
+            diapositivaActual = (diapositivaActual + n + diapositivas.length) % diapositivas.length;
+            diapositivas[diapositivaActual].classList.add('activa');
+        }
+    </script>
+</body>
+
+</html>

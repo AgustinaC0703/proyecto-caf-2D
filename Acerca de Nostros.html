@@ -1,0 +1,619 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device=width, initial scale=1.0" />
+    <title> Cafe 2D</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Questrial&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="Untitled-2.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #E5E5E5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .sobrenoscontainer {
+            max-width: 100%;
+            margin: auto;
+            padding: 0
+        }
+
+        .sobrenos {
+            width: 100%;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            color: #3a3a3a;
+            padding: 0;
+        }
+
+        .sobrenosimg {
+            width: 100%;
+            opacity: 0.5;
+            height: 600px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .sobrenos h1 {
+            color: black;
+            position: absolute;
+            font-family: Cardo, serif;
+            font-size: 36px;
+            font-weight: bold;
+            margin-top: -300px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            white-space: nowrap;
+            max-width: 90%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .nuestrahistoria {
+            display: flex;
+            align-items: center;
+            background-color: #1b1b1b;
+            color: white;
+            justify-content: flex-start;
+            height: 500px;
+            margin: 0;
+            padding-left: 10px;
+            padding-right: 10px;
+            gap: 30px;
+        }
+
+        .image-stack {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .image-stack img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            border: 2px solid #1b1b1b;
+        }
+
+        .image-stack img:first-child {
+            top: -40px;
+            left: 60px;
+            z-index: 1;
+            width: 300px;
+            height: 350px
+        }
+
+        .image-stack img:last-child {
+            top: -10px;
+            left: 150px;
+            z-index: 2;
+            width: 300px;
+            height: 350px;
+        }
+
+        .text-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .text-nuestrahistoria {
+            font-size: 32px;
+            font-family: "Questrial", serif;
+            font-weight: bold;
+            line-height: 1.2;
+            margin-left: 300px;
+            margin-bottom: 10px;
+            margin-top: -20px
+        }
+
+        .story-description {
+            font-size: 25px;
+            font-family: "Questrial", serif;
+            max-width: 500px;
+            text-align: center;
+            margin-top: 40px;
+            margin-left: 180px;
+        }
+
+        .mission-vision {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 70px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            height: 300px;
+            margin-bottom: 70px;
+        }
+
+        .mission-vision div {
+            width: 45%;
+            height: 100%;
+            background-color: #F4F0F0;
+            color: #333;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: black;
+            font-family: "Questrial", serif;
+            font-size: 23px;
+            text-align: center;
+        }
+
+        #menu-icon {
+            position: relative;
+            top: -58px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 10px;
+            margin: 80px auto;
+            width: 65%;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .sobrenosimg {
+
+                height: 500px
+            }
+
+            .icon {
+                margin-top: -13px;
+                width: 130px;
+                height: 130px
+            }
+
+            .fa-bars {
+                margin-right: -13px;
+                margin-top: -110px
+            }
+
+            .header h1 {
+                font-size: 25px;
+            }
+
+            .text-nuestrahistoria {
+                font-size: 30px;
+                margin-left: 240px;
+
+            }
+
+            .story-description {
+                font-size: 20px;
+                margin-right: 5px;
+                text-align: center
+            }
+
+            .mission-vision {
+                flex-direction: column;
+                align-items: center;
+                margin: 20px 15px;
+            }
+
+            .mission-vision div {
+                width: 48%;
+                padding: 20px;
+                font-size: 18px;
+            }
+
+            .mission-vision h3 {
+                font-size: 24px;
+            }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 250px);
+        }
+
+        .header-container {
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .fa-bars {
+            align-self: flex-end;
+        }
+
+        nav.sidebar.show {
+            display: flex;
+        }
+
+        .nuestrahistoria {
+            padding: 10px;
+        }
+
+        .image-stack img:first-child {
+
+            left: 30px;
+
+        }
+
+        .image-stack img:last-child {
+
+            left: 50px;
+
+        }
+
+        @media (max-width: 480px) {
+            .icon {
+                width: 120px;
+                height: 90px
+            }
+
+            .fa-bars {
+                margin-top: -76px;
+                margin-right: 5px;
+            }
+
+            .sobrenosimg {
+                height: 300px;
+            }
+
+            .sobrenos h1 {
+                font-size: 18px;
+                margin-top: -120px
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                width: 90%;
+
+
+            }
+
+            .gallery-item {
+
+                width: 100%;
+                height: 100%;
+                margin-right: 10px
+            }
+
+            .gallery-item img {
+                width: 103%;
+                height: 190px;
+                object-fit: cover;
+
+            }
+        }
+
+        .sobrenos h1 {
+            margin-bottom: 0;
+        }
+
+        .mission-vision {
+            margin: 10px 10px;
+        }
+
+        .mission-vision div {
+            padding: 10px;
+            font-size: 15px;
+        }
+
+        .mission-vision h3 {
+            font-size: 20px;
+        }
+
+
+        .nuestrahistoria {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: #1b1b1b;
+            color: white;
+            padding: 20px;
+            gap: 10px;
+        }
+
+        .image-stack {
+            position: relative;
+            width: 150px;
+            height: 200px;
+            flex-shrink: 0;
+        }
+
+        .image-stack img:first-child {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.7;
+            object-fit: cover;
+        }
+
+        .image-stack img:last-child {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .text-nuestrahistoria {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0;
+            color: white;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        .text-nuestrahistoria {
+            font-size: 24px;
+            margin: 0;
+            text-align: center;
+            margin-left: 10px
+        }
+
+        .story-description {
+            font-size: 16px;
+            margin: 20px 10px;
+            text-align: center;
+            margin-left: 50px
+        }
+
+
+
+
+        @media (min-width: 1024px) {
+            .sidebar {
+                right: 0;
+                position: static;
+                display: flex;
+                justify-content: flex-end;
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .sidebar ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                justify-content: flex-end;
+            }
+
+            .sidebar ul li {
+                padding: 10px 20px;
+                text-align: right;
+            }
+
+            .sidebar ul li a {
+                color: black;
+                text-decoration: none;
+                font-size: 20px;
+                background-color: transparent;
+            }
+
+            .sidebar ul li a:hover {
+                color: #000;
+                transition: color 0.3s;
+            }
+
+            .nuestrahistoria {
+                justify-content: space-between;
+                padding-left: 50px;
+                padding-right: 110px;
+            }
+
+            .image-stack {
+                margin-left: 0;
+                width: 420px;
+                position: relative;
+                margin-top: -25px;
+                top: 0px;
+                height: 460px;
+                
+            }
+
+            .historiatext-container {
+                margin-left: 50px;
+                max-width: 60%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <div class="icon-text" id="iconText">
+                <a href="index.html">
+                    <picture>
+                        <source media="(min-width: 480px)" src="imagenes/logo.png">
+                        <img src="imagenes/icono-alta definición.png" alt="icon" class="icon">
+                    </picture>
+                </a>
+
+            </div>
+            <nav id="sidebar" class="sidebar">
+                <ul>
+                    <li><a href="Menú.html">Menú</a></li>
+                    <li><a href="Ubicación y horarios.html">Ubicación y Horarios</a></li>
+                    <li><a href="Acerca de Nostros.html">Acerca de Nosotros</a></li>
+                </ul>
+            </nav>
+            <i class="fa fa-bars" aria-hidden="true" id="menu-icon"></i>
+        </div>
+
+    </header>
+
+
+    <div class="sobrenoscontainer">
+
+        <div class="sobrenos">
+
+            <img src="imagenes/sobrenos.jpg" alt="sobrenos" class="sobrenosimg">
+
+            <h1>ACERCA DE NOSOTROS</h1>
+        </div>
+    </div>
+
+
+    <div class="nuestrahistoria">
+        <div class="image-stack">
+            <img src="imagenes/nuestrahistoriabackground.jpg" alt="Imagen de fondo">
+            <picture>
+                <source media="(min-width: 480px)" src="imagenes/Nuestrahistoria-celulares.jpg">
+                <img src="imagenes/Nuestrahistoria.jpg" alt="Imagen en primer plano">
+            </picture>
+
+        </div>
+        <div class="historiatext-container">
+            <div class="text-nuestrahistoria">Nuestra historia</div>
+            <p class="story-description">Inspirado en el arte de los comics y el dibujo, nació Café 2D con un idea
+                única: transformar la experiencia de tomar un café en una aventura visual. Desde el primer día, Café 2D
+                ha sido un lugar de encuentro para quienes buscan vivir algo único y diferente.
+            </p>
+        </div>
+    </div>
+
+
+    <div class="mission-vision">
+        <div class="mission">
+            <h3>Nuestra Misión:</h3>
+            <p style=" margin-top: 10px">Nuestra misión es ofrecer a cada visitante una experiencia única y memorable
+                que combine la pasión por el café de especialidad con la creatividad visual del mundo del cómic. En Café
+                2D, no solo servimos café, sino una pausa creativa para que nuestros clientes puedan vivir, compartir y
+                recordar.</p>
+        </div>
+        <div class="vision">
+            <h3>Nuestra Visión:</h3>
+            <p style=" margin-top: 10px">Soñamos con ser reconocidos como un referente en innovación dentro del mundo de
+                las cafeterías temáticas. Queremos seguir explorando formas de conectar con nuestros clientes, llevando
+                la experiencia de Café 2D más allá de sus paredes y creando un universo propio que inspire y sorprenda.
+            </p>
+        </div>
+    </div>
+
+    <div class="footer-form">
+        <h2>Contáctanos</h2>
+        <form action="enviar.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+
+    <div class="gallery">
+        <div class="gallery-item large">
+            <a href="imagenes/Galería de imágenes 1-imagen grande.jpg" data-lightbox="fotos" title="Título de Imagen">
+
+                <img src="imagenes/Galería de imágenes 1.jpg" alt="Imagen 1">
+
+            </a>
+        </div>
+        <div class="gallery-item small">
+            <a href="imagenes/Galería de imágenes 2.jpg" data-lightbox="fotos" title="Título de Imagen">
+                <img src="imagenes/Galería de imagenes 2 pequeña.jpg" alt="Imagen 2">
+            </a>
+        </div>
+        <div class="gallery-item small">
+            <a href="imagenes/Galería de imágenes 3- grande.jpg" data-lightbox="fotos" title="Título de Imagen">
+                <img src="imagenes/Galería de imágenes 3-.jpg" alt="Imagen 3">
+            </a>
+        </div>
+        <div class="gallery-item small">
+            <a href="imagenes/galería de imágenes 4.jpg" data-lightbox="fotos" title="Título de Imagen">
+                <img src="imagenes/galería de imágenes 4-pequeña.jpg" alt="Imagen 4">
+            </a>
+        </div>
+        <div class="gallery-item small">
+            <a href="imagenes/Galería de imágenes 5.jpg" data-lightbox="fotos" title="Título de Imagen">
+                <img src="imagenes/Galería de imágenes 5-pequeña.jpg" alt="Imagen 5">
+            </a>
+        </div>
+        <div class="gallery-item small">
+            <a href="imagenes/Galería de imágenes 6.jpg" data-lightbox="fotos" title="Título de Imagen">
+                <img src="imagenes/Galería de imágenes 6-pequeña.jpg" alt="Imagen 5">
+            </a>
+        </div>
+    </div>
+
+
+    <footer>
+
+
+
+        <div class="footer">
+            <div class="footer-item">
+                <i class="fas fa-phone" aria-hidden="true"></i>
+                <p>+5493875457553</p>
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                <p>Café-2D@gmail.com</p>
+            </div>
+            <div class="footer-item">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+                <p>@cafe2d.belgrano</p>
+            </div>
+        </div>
+
+    </footer>
+
+    <script>
+        document.getElementById('menu-icon').onclick = function () {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
+        };
+
+        document.getElementById('iconText').onclick = function () {
+            window.location.href = "Café 2D.html"
+        };
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+</body>
+
+</html>

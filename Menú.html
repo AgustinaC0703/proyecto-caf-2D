@@ -1,0 +1,315 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width, initial scale=1.0"/>
+<title> Cafe 2D</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Untitled-2.css">
+
+</head>
+<body>
+	
+	<style>
+		body {background-color: #E1E1E1}
+
+
+		
+		  .menucontainer {
+            max-width: 100%;
+            margin: auto;
+            padding: 0
+        }
+        .menudiv {
+			width: 100%;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            color: #3a3a3a;
+            padding: 0;
+        }
+	  .menuimg{width: 100%; opacity: 0.6; 
+    height:  600px; 
+    object-fit: cover; 
+    display: block; 
+	margin: 0 auto;
+	margin-top:  0;
+		margin-bottom: 0;
+}
+	  
+        .menudiv h1 {
+           color: black; position: absolute; font-family: Cardo, serif; font-size: 60px; font-weight: bold; margin-top: -300px; left: 50%; transform: translate(-50%, -50%); text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
+                }
+		
+		.sectioncoffe {
+    margin-bottom: 40px;
+			margin-top: 40px;
+    width: 100%;
+    max-width: 1200px; 
+    margin-left: auto; 
+    margin-right: auto;
+}
+        .sectioncoffe h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+			text-align: center
+        }
+        .section-contentcoffe {
+            border: 1px solid #000;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        .menu-item span {
+            display: inline-block;
+        }
+        .menu-item .dots {
+            flex: 1;
+            border-bottom: 1px dotted #000;
+            margin: 0 10px;
+            height: 1px;
+        }
+        .price {
+            font-weight: bold;
+        }
+		
+		  
+		@media (max-width:780px){
+			
+			.menuimg{
+    height:  400px; 
+   
+}
+			 .menudiv h1 {
+           font-size: 40px;  margin-top: -200px;
+                }
+			.sectioncoffe {
+    width: 80%;
+    }
+		
+		}
+		
+	</style>
+		
+		
+	<header>
+			<div class="header-container"> 
+		<div class= "icon-text" id= "iconText">
+			<a href="index.html">
+		<picture>
+  <source media="(min-width: 480px)" src="imagenes/logo.png"> 
+  <img src= "imagenes/icono-alta definición.png" alt= "icon" class= "icon">
+				</picture>
+				</a>
+		</div>
+				 <nav id="sidebar" class="sidebar">
+					 
+					 
+  <ul>
+   <li><a href="Menú.html">Menú</a></li>
+	<li><a href="Ubicación y horarios.html">Ubicación y Horarios</a></li>
+    <li><a href="Acerca de Nostros.html">Acerca de Nosotros</a></li>
+  </ul>
+</nav>
+			<i class="fa fa-bars" aria-hidden="true" id="menu-icon"></i>
+			 </div>
+		
+	</header>
+	
+ <div class="menucontainer">
+    
+    <div class="menudiv">
+		<picture>
+  <source media="(min-width: 480px)" src="imagenes/menuimg-celulares.jpg"> 
+  <img src= "imagenes/menuimg (2).jpg" alt= "menuimg" class= "menuimg">
+				</picture>
+
+				
+	
+        <h1> MENÚ</h1>
+    </div>
+	</div>
+
+   <div class="sectioncoffe">
+            <h2>Coffe</h2>
+            <div class="section-contentcoffe">
+                <div class="menu-item">
+                    <span>Flat White</span>
+                    <div class="dots"></div>
+                    <span class="price">$3000</span>
+                </div>
+                <div class="menu-item">
+                    <span>Capuccino</span>
+                    <div class="dots"></div>
+                    <span class="price">$4000</span>
+                </div>
+                <div class="menu-item">
+                    <span>Americano</span>
+                    <div class="dots"></div>
+                    <span class="price">$3300</span>
+                </div>
+                <div class="menu-item">
+                    <span>Latte</span>
+                    <div class="dots"></div>
+                    <span class="price">$2600</span>
+                </div>
+				 <div class="menu-item">
+                    <span>Latte Vainilla</span>
+                    <div class="dots"></div>
+                    <span class="price">$3000</span>
+                </div>
+				 <div class="menu-item">
+                    <span>Latte Caramelo</span>
+                    <div class="dots"></div>
+                    <span class="price">$3000</span>
+                </div>
+				 <div class="menu-item">
+                    <span>Mocaccino</span>
+                    <div class="dots"></div>
+                    <span class="price">$4000</span>
+                </div>
+				 <div class="menu-item">
+                    <span>Chocolatada</span>
+                    <div class="dots"></div>
+                    <span class="price">$3200</span>
+                </div>
+				 <div class="menu-item">
+                    <span>Expreso/Doble</span>
+                    <div class="dots"></div>
+                    <span class="price">$2600</span>
+                </div>
+				 <div class="menu-item">
+                    <span>Macchiato/Cortado</span>
+                    <div class="dots"></div>
+                    <span class="price">$3000</span>
+                </div>
+				 <div class="menu-item">
+                    <span>Submarino</span>
+                    <div class="dots"></div>
+                    <span class="price">$4000</span>
+                </div>
+            </div>
+        </div>
+		
+        <div class="sectioncoffe">
+            <h2>Iced Coffe</h2>
+            <div class="section-contentcoffe">
+                <div class="menu-item">
+                    <span>Iced Latte</span>
+                    <div class="dots"></div>
+                    <span class="price">$4000</span>
+                </div>
+                <div class="menu-item">
+                    <span>Iced Mocca</span>
+                    <div class="dots"></div>
+                    <span class="price">$4200</span>
+                </div>
+                <div class="menu-item">
+                    <span>Iced Vainilla</span>
+                    <div class="dots"></div>
+                    <span class="price">$4000</span>
+                </div>
+                <div class="menu-item">
+                    <span>Iced americano</span>
+                    <div class="dots"></div>
+                    <span class="price">$4200</span>
+                </div>
+                <div class="menu-item">
+                    <span>Iced caramelo</span>
+                    <div class="dots"></div>
+                    <span class="price">$4000</span>
+                </div>
+            </div>
+        </div>
+	
+        
+        <div class="sectioncoffe">
+            <h2>Tea</h2>
+            <div class="section-contentcoffe">
+                <div class="menu-item">
+                    <span>Green Tea</span>
+                    <div class="dots"></div>
+                    <span class="price">$2700</span>
+                </div>
+                <div class="menu-item">
+                    <span>Fruit Tea</span>
+                    <div class="dots"></div>
+                    <span class="price">$3000</span>
+                </div>
+				<div class="menu-item">
+                    <span>White Tea</span>
+                    <div class="dots"></div>
+                    <span class="price">$3400</span>
+                </div>
+				<div class="menu-item">
+                    <span>Ginger Tea</span>
+                    <div class="dots"></div>
+                    <span class="price">$3000</span>
+                </div>
+				<div class="menu-item">
+                    <span>Mint Tea</span>
+                    <div class="dots"></div>
+                    <span class="price">$3000</span>
+                </div>
+				<div class="menu-item">
+                    <span>Masala Chai Tea</span>
+                    <div class="dots"></div>
+                    <span class="price">$3200</span>
+                </div>
+				<div class="menu-item">
+                    <span>Matcha</span>
+                    <div class="dots"></div>
+                    <span class="price">$3700</span>
+                </div>
+            </div>
+        </div>
+
+
+
+	<footer>
+			
+
+
+    <div class="footer">
+        <div class="footer-item">
+           <i class="fas fa-phone" aria-hidden="true" ></i>
+            <p>+5493875457553</p>
+        </div>
+        <div class="footer-item">
+          <i class="fas fa-envelope" aria-hidden="true"  ></i>
+            <p>Café-2D@gmail.com</p>
+        </div>
+		<div class="footer-item">
+           <i class="fab fa-instagram" aria-hidden="true" ></i>
+            <p>@cafe2d.belgrano</p>
+        </div>
+		</div>
+		</footer>
+	
+	
+	<script>
+	document.getElementById( 'menu-icon').onclick = function() {
+		var sidebar=document.getElementById ('sidebar'); 
+		sidebar.classList.toggle('show');
+	};
+		
+		document.getElementById('iconText').onclick = function(){
+			window.location.href = "Café 2D.html"
+		};
+	
+	</script>
+	
+	</body>
+</html>
+

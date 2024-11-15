@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device=width, initial scale=1.0" />
+  <title> Cafe 2D</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Questrial&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="Untitled-2.css">
+  <style>
+    .full-width-image {
+      opacity: 0.7
+    }
+
+    .container h1 {
+      color: black;
+      position: absolute;
+      font-family: Cardo, serif;
+      font-size: 35px;
+      font-weight: bold;
+      margin-top: -250px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      white-space: nowrap;
+      max-width: 70%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cafe2D {
+      max-width: 100%;
+      margin-bottom: 40px;
+      margin-top: 80px;
+      padding: 0;
+      background-color: white;
+      justify-content: center
+    }
+
+    .textcafe2D {
+      font-size: 40px;
+      font-family: "Cardo", serif;
+      font-weight: bold;
+      color: #161616;
+      margin-bottom: 90px;
+      text-align: center;
+      color: #362E2E
+    }
+
+    .textcafe2D p {
+      font-size: 25px;
+      font-family: "Cardo", serif;
+      margin-top: 15px;
+      text-align: center;
+      margin-left: 100px;
+      margin-right: 100px
+    }
+
+    @media (max-width:480px) {
+
+
+      .container h1 {
+
+        font-weight: 50;
+        font-size: 17px;
+        margin-top: -140px;
+        margin-left: -25px;
+        margin-right: -25px;
+      }
+
+
+      .textcafe2D {
+        font-size: 27px;
+        margin-bottom: 30px;
+        margin-top: -70px
+      }
+
+      .textcafe2D p {
+        font-size: 15px;
+
+      }
+
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-container">
+      <div class="icon-text" id="iconText">
+        <a href="index.html">
+          <picture>
+            <source media="(min-width: 480px)" src="imagenes/logo.png"> <img src="imagenes/icono-alta%20definici%C3%B3n.png" alt="icon"
+              class="icon">
+          </picture>
+        </a>
+      </div>
+      <nav id="sidebar" class="sidebar">
+        <ul>
+          <li>
+            <a href="Menú.html">Menú</a>
+          </li>
+          <li>
+            <a href="Ubicación y horarios.html">Ubicación y Horarios</a>
+          </li>
+          <li>
+            <a href="Acerca de Nostros.html">Acerca de Nosotros</a>
+          </li>
+        </ul>
+      </nav><i class="fa fa-bars" aria-hidden="true" id="menu-icon"></i>
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <img src="imagenes/fullimage.jpg" alt="Imagen" class="full-width-image">
+      <h1>¡ Simplemente, otra dimensión!</h1>
+    </div>
+  </section>
+  <div class="icons-container">
+    <div class="item">
+      <img src="imagenes/WhatsApp_Image_2024-10-08_at_10.11.45-removebg-preview.png" alt="icons">
+      <p>Menú amplio y variado</p>
+    </div>
+    <div class="item">
+      <img src="imagenes/WhatsApp_Image_2024-10-08_at_10.11.45__1_-removebg-preview.png" alt="icons">
+      <p>Diseño visual atrapante y original</p>
+    </div>
+    <div class="item">
+      <img src="imagenes/WhatsApp_Image_2024-10-08_at_10.11.45__2_-removebg-preview.png" alt="icons">
+      <p>Excelente ubicación</p>
+    </div>
+  </div>
+  <div class="cafe2D">
+    <div class="textcafe2D">
+      ¡Bienvenidos a Café 2D!
+      <p>Más que una cafetería, Café 2D es una experiencia inmersiva. Aquí, cada café es una pausa, cada postre es una
+        aventura, y cada visita es una historia única para contar. Ideal para quienes buscan algo más que un buen café,
+        para los que desean vivir y compartir un momento diferente, y para quienes disfrutan de espacios visualmente
+        impactantes.</p>
+    </div>
+  </div>
+  <div class="container-products">
+    <div class="productos-destacados">
+      <h2>Productos destacados de la semana</h2>
+      <p>Nuestros producto incluyen una amplia selección, perfecto para quienes buscan disfrutar de un acompañamiento
+        deleitable</p>
+    </div>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide"><img src="imagenes/slider1.jpg" alt="slideimage"></div>
+        <div class="slide"><img src="imagenes/slider2.jpg" alt="slideimage"></div>
+        <div class="slide"><img src="imagenes/slider3.jpg" alt="slideimage"></div>
+      </div><button class="prev" onclick="moveSlide(-1)">❮</button> <button class="next"
+        onclick="moveSlide(1)">❯</button>
+    </div>
+  </div>
+  <div class="nuestrocafe"><img src="imagenes/index1.jpg" alt="Imagen 1"> <img src="imagenes/index2.jpg" alt="Imagen 2"> <img
+      src="imagenes/index3.jpg" alt="Imagen 3"> <img src="imagenes/index4.jpg" alt="Imagen 4"> <img src="imagenes/index5.jpg" alt="Imagen 5"></div>
+	
+	<div style="text-align: center; margin: 20px 0;">
+            <a href="Presentación.html" style="background-color: #333; color: #fff; padding: 30px 40px; text-decoration: none; border-radius: 5px;font-family: Questrial, sans-serif; font-size: 30px; margin-bottom: 50px ">VER PRESENTACIÓN</a>
+        </div>
+  <footer>
+
+    <div class="footer">
+      <div class="footer-item">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+        <p>+5493875457553</p>
+      </div>
+      <div class="footer-item">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <p>Café-2D@gmail.com</p>
+      </div>
+      <div class="footer-item">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+        <p>@cafe2d.belgrano</p>
+      </div>
+    </div>
+
+  </footer>
+  <script>
+    document.getElementById('menu-icon').onclick = function () {
+      var sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('show');
+    };
+
+    document.getElementById('iconText').onclick = function () {
+      window.location.href = "Café 2D.html"
+    }
+
+  </script>
+  <script>
+
+
+
+    let slideIndex = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelector('.slides');
+      const totalSlides = document.querySelectorAll('.slide').length;
+
+      if (index >= totalSlides) {
+        slideIndex = 0;
+      } else if (index < 0) {
+        slideIndex = totalSlides - 1;
+      } else {
+        slideIndex = index;
+      }
+      slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+    }
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+    function moveSlide(step) {
+      showSlide(slideIndex + step);
+    }
+
+
+    showSlide(slideIndex);
+
+  </script>
+</body>
+
+</html>

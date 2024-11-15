@@ -1,0 +1,320 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device=width, initial scale=1.0"/>
+<title> Cafe 2D</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Untitled-2.css">
+	<link rel="stylesheet" href="css/lightbox.min.css">
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .sobrenoscontainer {
+            max-width: 100%;
+            margin: auto;
+            padding: 0
+        }
+        .sobrenos {
+			width: 100%;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            color: #3a3a3a;
+            padding: 0;
+        }
+	  .sobrenosimg {width: 100%; opacity: 0.5; 
+    height:  600px; 
+    object-fit: cover; 
+    display: block; 
+	margin: 0 auto;
+	margin-top:  0;
+		margin-bottom: 0;
+}
+	  
+        .sobrenos h1 {
+           color: black; position: absolute; font-family: Cardo, serif; font-size: 36px; font-weight: bold; top: 40%; left: 50%; transform: translate(-50%, -50%); text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); white-space: nowrap; max-width: 90%; overflow: hidden; text-overflow: ellipsis;
+                }
+	  
+       .nuestrahistoria {
+    display: flex;
+    align-items: center;
+    background-color: #1b1b1b; /* Fondo negro */
+    color: white;
+    justify-content: flex-start; /* Mueve el contenido hacia la izquierda */
+    height: 500px;
+    margin: 0;
+    padding-left: 20px; /* Ajusta el margen izquierdo */
+    gap: 30px; /* Espacio entre imagenes y texto */
+}
+
+.image-stack {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.image-stack img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    border: 2px solid #1b1b1b;
+}
+
+.image-stack img:first-child {
+    top: -40px; 
+    left: 120px;
+    z-index: 1;
+	width: 300px;
+	height: 350px
+}
+
+.image-stack img:last-child {
+    top: -10px;
+    left: 210px; 
+    z-index: 2;
+	width: 300px;
+	height: 350px;
+}
+
+	  .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea a la izquierda dentro del contenedor */
+}
+
+.text-nuestrahistoria {
+	  font-size: 32px; 
+    font-weight: bold;
+    line-height: 1.2;
+  margin-left: 450px;
+    margin-bottom: 10px; 
+	margin-top: -20px
+}
+
+.story-description {
+    font-size: 18px;
+    max-width: 500px; 
+    text-align: center;
+    margin-top: 40px;
+	 margin-left: 330px;
+}
+        .mission-vision {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 70px;
+            flex-wrap: wrap;
+			margin-top: 40px
+        }
+        .mission-vision div {
+            width: 48%;
+			height: 120%;
+            background-color: #fff;
+            color: #333;
+            padding: 40px;
+            margin-bottom: 80px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+  
+ 
+ .gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr; /* Tres columnas: una grande y dos pequeñas */
+    grid-template-rows: 1fr 1fr; /* Dos filas para distribuir las imágenes pequeñas */
+    gap: 10px; /* Espacio reducido entre todas las imágenes */
+    column-gap: 5px; /* Control adicional solo en el espacio horizontal */
+    margin: 80px auto; /* Centra el contenedor en la pantalla */
+    width: 60%; 
+	 height: 80%/* Ancho del contenedor */
+}
+
+.gallery-item.large {
+    grid-column: 1 / 2; /* La imagen grande ocupa solo la primera columna */
+    grid-row: 1 / 3; /* La imagen grande ocupa ambas filas */
+}
+
+.gallery-item.small:nth-child(2) {
+    grid-column: 2 / 3; /* Segunda columna para la primera imagen pequeña */
+    grid-row: 1 / 2;
+}
+
+.gallery-item.small:nth-child(3) {
+    grid-column: 3 / 4; /* Tercera columna para la segunda imagen pequeña */
+    grid-row: 1 / 2;
+}
+
+.gallery-item.small:nth-child(4) {
+    grid-column: 2 / 3; /* Segunda columna para la tercera imagen pequeña */
+    grid-row: 2 / 3;
+}
+
+.gallery-item.small:nth-child(5) {
+    grid-column: 3 / 4; /* Tercera columna para la cuarta imagen pequeña */
+    grid-row: 2 / 3;
+}
+
+.gallery-item img {
+    width: 100%; /* Usa todo el ancho del contenedor */
+    height: 100%; /* Usa todo el alto del contenedor */
+    object-fit: cover; /* Ajusta la imagen para que se recorte en lugar de estirarse */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+    
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            .mission-vision div {
+                width: 100%;
+            }
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.5em;
+            }
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="lll">
+	<header>
+		<div class="header-container"> 
+		<div class= "icon-text" id= "iconText">
+			<a href="index.html">
+	<img src= "WhatsApp_Image_2024-10-02_at_19.38.04-removebg-preview.png" alt= "icon" class= "icon"> 
+			<span class="text">Café 2D</span> </a>
+		</div>
+				 <nav id="sidebar" class="sidebar">
+  <ul>
+    <li><a href="Menú.html">menú</a></li>
+	<li><a href="Ubicación y horarios.html">ubicación y horarios</a></li>
+    <li><a href="Acerca de Nostros.html">Acerca de nosotros</a></li>
+         
+  </ul>
+</nav>
+			<i class="fa fa-bars" aria-hidden="true" id="menu-icon"></i>
+			 </div>
+		
+	</header>
+		
+
+<div class="sobrenoscontainer">
+    <!-- Header Section -->
+    <div class="sobrenos">
+		<img src="Acerca de nosotros.jpg" alt="sobrenos" class= "sobrenosimg">
+        <h1>ACERCA DE NOSOTROS</h1>
+    </div>
+	</div>
+
+	
+ <div class="nuestrahistoria">
+    <div class="image-stack">
+        <img src="nuestrahistoriabackground.jpg" alt="Imagen de fondo">
+        <img src="Nuestrahistoria.jpg" alt="Imagen en primer plano">
+    </div>
+	 <div class= "historiatext-container">
+    <div class="text-nuestrahistoria">Nuestra historia</div>
+	 <p class="story-description">Inspirado en el arte de los comics y el dibujo, nació Café 2D con un idea única: transformar la experiencia de tomar un café en una aventura visual. Desde el primer día, Café 2D ha sido un lugar de encuentro para quienes buscan algo más que un café; buscan vivir una experiencia diferente.
+</p>
+</div>
+	 </div>
+    
+	
+        <div class="mission-vision">
+            <div class="mission">
+                <h3>Nuestra Misión:</h3>
+                <p>Nuestra misión es ofrecer a cada visitante una experiencia única y memorable que combine la pasión por el café de especialidad con la creatividad visual del mundo del cómic. En Café 2D, no solo servimos café, sino una pausa creativa para que nuestros clientes puedan vivir, compartir y recordar.</p>
+            </div>
+            <div class="vision">
+                <h3>Nuestra Visión:</h3>
+                <p>Soñamos con ser reconocidos como un referente en innovación dentro del mundo de las cafeterías temáticas. Queremos seguir explorando formas de conectar con nuestros clientes, llevando la experiencia de Café 2D más allá de sus paredes y creando un universo propio que inspire y sorprenda.</p>
+            </div>
+        </div>
+
+     	 	<div class="footer-form">
+        <h3>Contáctanos</h3>
+        <form action="enviar.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+	</div>
+		
+        
+     <div class="gallery">
+    <div class="gallery-item large">
+        <img src="Galería de imágenes 1.jpg" alt="Imagen 1">
+    </div>
+    <div class="gallery-item small">
+        <img src="Galería de imagenes 2.jpg" alt="Imagen 2">
+    </div>
+    <div class="gallery-item small">
+        <img src="Galería de imágenes 3.jpg" alt="Imagen 3">
+    </div>
+    <div class="gallery-item small">
+        <img src="galería de imágenes 4.jpg" alt="Imagen 4">
+    </div>
+    <div class="gallery-item small">
+        <img src="Galería de imágenes 5.jpg" alt="Imagen 5">
+    </div>
+</div>
+   
+		
+	<footer>
+			
+
+
+    <div class="footer">
+        <div class="footer-item">
+           <i class="fas fa-phone" aria-hidden="true" ></i>
+            <p>+5493875457553</p>
+        </div>
+        <div class="footer-item">
+          <i class="fas fa-envelope" aria-hidden="true"  ></i>
+            <p>Café-2D@gmail.com</p>
+        </div>
+		<div class="footer-item">
+           <i class="fab fa-instagram" aria-hidden="true" ></i>
+            <p>@cafe2d.belgrano</p>
+        </div>
+		</div>
+		
+		</footer>
+	
+	<script>
+	document.getElementById( 'menu-icon').onclick = function() {
+		var sidebar=document.getElementById ('sidebar'); 
+		sidebar.classList.toggle('show');
+	};
+		
+		document.getElementById('iconText').onclick = function(){
+			window.location.href = "Café 2D.html"
+		};
+	
+	</script>
+	<script src="js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>

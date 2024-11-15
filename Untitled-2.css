@@ -1,0 +1,817 @@
+
+*{margin: 0; padding: 0;
+box-sizing: border-box}
+
+body {
+	background-color: white;
+	overflow-x: hidden
+}
+
+header { 
+  position: absolute;
+	width: 100%;
+	background-color : none;
+	padding:  0;
+	z-index: 10
+}
+
+.header-container{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 20px;
+	widht: 100%;
+	position: relative;
+	margin-top: 5px
+		}
+
+
+.icon {
+    width: 200px; 
+    height: 140px; 
+
+}
+
+.text {
+	font-family:  "PT Serif", serif;
+  font-style: italic;
+    font-size: 40px;
+    color: black;
+}
+
+.fa-bars{
+	font-size: 40px;
+	cursor: pointer;
+	z-index:1001;
+	margin-right: 40px;
+	display: block
+}
+
+.sidebar {
+	position: fixed;
+	top: 80px;
+	right: -100%;
+	width: 100%;
+	height: 20vh;
+	background-color: #333;
+	color:white;
+	transition: right 0.3s ease;
+	z-index: 1000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center
+}
+
+
+.sidebar ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%
+
+} 
+
+	
+	.sidebar ul li {
+		width: 100%;
+		text-align: center;
+		padding: 20px 0;
+   
+}
+
+
+
+.sidebar ul li a { 
+	color: white;
+	text-decoration: none;
+	font-size: 30px;
+	font-family: Cardo, serif;
+  font-style: normal;
+	display: block;
+	width: 100%;
+	padding: 10px 0 ;
+	background-color: #444
+}
+
+	
+
+
+.sidebar ul li a:hover {
+    background-color: #555;
+	padding: 10px 20px;
+	transition: background-color 0.3s;
+}
+
+.sidebar.show {
+	right:0
+}
+
+
+.container {
+   width: 100%; 
+    height: auto;
+	overflow: hidden;
+	margin: 0 auto
+   
+}
+
+.full-width-image {
+     width: 100%; 
+    height:  500px; 
+    object-fit: cover; 
+    display: block; 
+	margin: 0 auto;
+	margin-top:  0;
+		margin-bottom: 0;
+}
+
+.textimage { 
+            position: absolute;
+            top: 400px; 
+            left: 30px; 
+            color: white; 
+            font-size: 24px; 
+            background-color: none; 
+            padding: 5px;}
+
+
+
+.icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; 
+    padding: 50px;
+	 margin-bottom: 80px
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+	margin: 0 10px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 2px 3px 8px rgba(0, 0, 0, 1.3);
+	transition: traform 0.3s
+}
+
+.item img {
+    width: 80px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.item p {
+    font-size: 20px;
+    color: #494848;
+    margin: 0;
+}
+  .nuestrocafe{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+	  max-width: 100%;
+	 
+        }
+
+        .nuestrocafe img {
+			max-width: 100%;
+            width: 70%; 
+            height:200px;
+			object-fit: cover;
+            margin: 10px 20px;
+			margin-top: 30px;
+			margin-bottom: 100px;
+            border-radius: 10px; 
+        }
+   
+
+        .productos {
+            width: 45%;
+            color: dimgrey;
+			margin-top: 20px
+        }
+
+        .productos h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .productos p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+
+
+   .container-products {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+	   margin-bottom: 80px;
+	   margin-top: 40px;
+            background-color: #3F3F3F; 
+        }
+
+        .productos-destacados {
+            width: 45%;
+            color: #FFFFFF;
+        }
+
+        .productos-destacados h2 {
+            font-size: 30px;
+            margin-top: -30px;
+          font-family: "Questrial", sans-serif;
+			text-align: center;
+			margin-bottom: 30px;
+			margin-left:100px
+        }
+
+        .productos-destacados p {
+            font-size: 20px;
+            line-height: 1.5;
+			  font-family: "Questrial", sans-serif;
+			text-align: center;
+			margin-left: 100px
+        }
+
+
+       .slider {
+            width: 45%;
+		   max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+			width: 100%
+        }
+
+        .slide {
+            min-width: 100%;
+			box-sizing: border-box
+        }
+
+        .slide img {
+            width: 100%;
+            height: 500px;
+			max-height: 500px;
+			object-fit: cover
+        }
+
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+
+
+
+.main-nav {
+    position: absolute; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 10px;
+    border-radius: 5px; 
+	display: none
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+}
+
+.main-nav ul li {
+    margin: 0 15px; 
+}
+
+.main-nav ul li a {
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    display: block;
+}
+
+.main-nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.Ubicacion, .horarios {
+    display: flex;
+    width: 100%;
+    max-width: 1600px; 
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    height: 500px; 
+}
+
+.Ubicacion img, .horarios img {
+    width: 50%;
+    height: 100%; 
+    object-fit: cover; 
+	
+}
+.Ubicacion img{ opacity: 1}
+
+.Ubicacion .text-container, .horarios .text-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.Ubicacion .text-container {
+    background-color: #3F2D37;
+    text-align: center;
+}
+
+.horarios {
+    flex-direction: row-reverse;
+}
+
+.horarios .text-container {
+    background-color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding-right: 20px; 
+    text-align: right;
+}
+
+.location, .hours {
+    font-size: 60px;
+	font-family: "Cardo", serif;
+    font-weight: bold;
+	color: #D5CFCF;
+    margin-bottom: 10px;
+}
+.location p { font-size: 25px;
+	font-family: "Cardo", serif;
+	margin-top: 15px;
+}
+
+.hours {
+	font-size: 60px;
+	font-family: "Cardo", serif;
+	font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hours p {
+    font-size: 25px;
+	font-family: "Cardo", serif;
+	margin-top: 15px;
+	padding-right: 43px;
+}
+
+.imagenacercadenosotros {
+     width: 100%; 
+    height:  800px; 
+    object-fit: cover; 
+    display: block; 
+	margin: 0 auto;
+	margin-top:  0;
+		margin-bottom: 20px;
+}
+
+
+
+.Nuestroequipo {
+    display: flex; 
+	text-align: center;
+    margin-top: 20px; 
+	flex-wrap: wrap;
+}
+
+.image-caption {
+   text-align: center
+}
+
+.equipo { 
+	font-size: 36px;
+    color: #333;
+	text-align: center;
+	margin-top: 20px;
+}
+.team { display: flex;
+justify-content: center;
+gap: 30px;
+flex-wrap: wrap;
+	}
+.equipo1{ 
+	width: 200px;
+	height: auto;}
+
+
+  .footer {
+            background-color: #1a1a1a; 
+            color: #e0c08b; 
+            padding: 50px 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 100px;
+	  margin-top: 80px
+        }
+
+        .footer-item {
+            text-align: center;
+        }
+
+        .footer-item i {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-item p {
+            font-size: 14px;
+            margin: 5px 0;
+            color: #e0c08b;
+        }
+
+.footer-form {
+    background-color: black; 
+    padding: 20px;
+    color: #e0c08b; 
+    text-align: center;
+  margin-top: 20px;
+	  margin-bottom: 20px
+}
+
+.footer-form h3 {
+    color: #e0c08b;
+  text-align: center;
+		margin-bottom: 10px
+}
+
+.footer-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-form label {
+    margin: 10px 0 5px;
+}
+
+.footer-form input, .footer-form textarea {
+    width: 100%;
+	height: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.footer-form button {
+    background-color: #e0c08b;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.footer-form button:hover {
+    background-color: #ccc;
+}
+
+@media (max-width: 780px) {
+   
+    .icon {
+        margin-top: -18px;
+	}
+	.fa-bars {
+
+		margin-right:-13px;
+		margin-top: -60px
+	}
+
+	.sidebar ul{
+	padding: 0;
+	width: 100%
+
+} 
+
+	
+	.sidebar ul li {
+		width: 100%;
+		padding: 10px 0;
+   
+}
+
+
+
+.sidebar ul li a { 
+	font-size: 23px;
+}
+
+    
+
+    .full-width-image {
+        height: auto;
+        object-fit: cover;
+    }
+	.icons-container {
+		
+		display: grid;
+		grid-template-columns:1fr 1fr 1fr;
+	}
+	
+
+	
+   .item {
+
+		width: 200px;
+		height: 120px
+	}
+
+    .item img {
+        width: 60px;
+        height: 80px;
+		margin-top: -35px;
+		margin-bottom:-13px
+    }
+	.item p{
+
+		font-size:15px
+	}
+
+    .slider {
+        width: 50%;
+        max-width: 100%;
+    }
+
+    .iframe-anuncio {
+        width: 100%;
+        height: 200px;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-item i {
+        font-size: 18px;
+    }
+
+    .footer-item p {
+        font-size: 12px;
+    }
+
+    .text {
+        font-size: 30px;
+    }
+
+   
+
+    .slider {
+        max-height: 400px;
+    }
+
+    .slide img {
+        max-height: 400px;
+    }
+
+	.productos-destacados h2 {
+	
+		font-size: 25px;
+		margin-left: 10px
+	}
+	.productos-destacados p {
+
+		font-size: 17px;
+		margin-left: 25px
+	}
+
+    .footer {
+        flex-direction: row;
+    }
+	 .nuestrocafe img {
+			max-width: 100%;
+            width: 90%; 
+            height:170px;
+			margin-top: -20px;
+			   margin-left: 3px;
+			   margin-right:3px
+			
+        }
+}
+
+
+@media (max-width:480px){
+	
+	.icon { width: 105px;
+		   height: 80px;
+		
+	}
+	.fa-bars {
+
+		font-size: 25px;
+	}
+	
+	.sidebar {
+	top: 80px;
+	width: 100%;
+	height: 200px;
+}
+
+
+.sidebar ul{
+	padding: 0;
+	width: 100%
+
+} 
+
+	
+	.sidebar ul li {
+		width: 100%;
+		padding: 10px 0;
+   
+}
+
+
+
+.sidebar ul li a { 
+	font-size: 23px;
+}
+
+	.icons-container {
+		flex-direction: row
+	}
+	
+
+	
+	
+   .item {
+
+		width: 120px;
+		height: 110px
+	}
+
+    .item img {
+        width: 60px;
+        height: 80px;
+		margin-top: -40px;
+		margin-bottom:-19px
+    }
+	.item p{
+
+		font-size:15px
+	}
+	
+	  .nuestrocafe img {
+			max-width: 100%;
+            width: 90%; 
+            height:100px;
+		margin-right: 8px;
+		  margin-left: 2px;
+			margin-top: -30px;
+			
+        }
+	.section {
+    margin-left: 10px;
+    padding: 0px;
+    width: 95%;
+		height: 500px;
+}
+
+
+
+.Ubicacion img, .horarios img {
+    width: 50%;
+    height: 100%; 
+    object-fit: cover; 
+	
+}
+
+
+
+
+.location, .hours {
+    font-size: 30px;
+	
+}
+.location p { font-size: 15px;
+	
+}
+
+.hours {
+	font-size: 30px;
+	
+}
+
+.hours p {
+    font-size: 15px;
+	
+}
+
+	
+}
+
+
+@media (min-width: 1024px) {
+    .fa-bars {
+		display: none;}
+	
+	
+	.sidebar{
+		right: 0;
+        position: static; 
+		display: flex;
+        justify-content: flex-end;
+		width: auto;
+		height: auto;
+		background-color: transparent; 
+		align-items: center;
+		gap: 20px
+       
+    }
+
+    .sidebar ul {
+       display: flex; 
+		align-items: center;
+        list-style: none; 
+       padding: 0;
+		margin: 0;
+		justify-content: flex-end
+		
+    }
+
+    .sidebar ul li {
+        padding: 10px 20px; 
+		text-align: right
+       
+    }
+	    .sidebar ul li a {
+        color: black;
+        text-decoration: none;
+        font-size: 20px;
+			background-color: transparent;
+			text-align: right
+	}
+	.siderbar ul li a:hover {
+		background-color: transparent;
+		color: #000;
+		transition: color 0.3s
+			
+	
+	}
+	
+	
+		  
+		 
+		  
+}
+
